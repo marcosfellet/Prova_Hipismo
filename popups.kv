@@ -1,5 +1,64 @@
 #:kivy 2.3.1
 
-<CavaloPopups>:
+<ParametrosPopup>:
+    title: "Parâmetros"
+    size_hint_y: None
+    size_hint_x: 0.4
+    height: 200
     BoxLayout:
-        orientation:
+        id: parametros
+        orientation: 'vertical'
+        GridLayout:
+            cols: 2
+            rows: 2
+            Label:
+                text: "Comprimento da pista (m)"
+                font_size: 14
+            TextInput:
+                id: txt_pista
+                text: "0"
+                fonte_size: 14
+                halign: 'center'
+                valign: 'middle'
+            Label:
+                text: "Velocidade (m/s)"
+                font_size: 14
+            TextInput:
+                id: txt_velocidade
+                text: "0"
+                fonte_size: 14
+                halign: 'center'
+                valign: 'middle'
+         
+<ObstaculosPopup>:
+        
+<ErroPopup>:
+    size_hint: 0.5, 0.25
+    auto_dismiss: False
+    title: "Erro"
+    
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 15
+        
+        Label:
+            text: "❌"
+            font_size: 40
+            size_hint_y: 0.4
+            color: 1, 0, 0, 1
+        
+        Label:
+            id: msg_label
+            text: root.mensagem if hasattr(root, 'mensagem') else "Erro!"
+            font_size: 16
+            color: 0, 0, 0, 1
+            halign: 'center'
+        
+        Button:
+            text: "OK"
+            size_hint: 0.5, 0.3
+            pos_hint: {'center_x': 0.5}
+            background_color: 0.3, 0.6, 1, 1
+            on_release: root.dismiss()
+

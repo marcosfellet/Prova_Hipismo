@@ -1,0 +1,86 @@
+#:kivy 2.3.1
+
+<MainWidget>:
+    orientation: 'vertical'
+    canvas:
+        Color:
+            rgb: 0.5, 0.5, 0.5
+        Rectangle:
+            size: self.size
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: (1,0.22)
+        spacing: 20
+        Label:
+            text: 'Sistema - Prova Vale dos Anjos'
+            font_size: '25sp'
+            size_hint: (.5, None)
+            # pos_hint: {'top': 1, 'right': 1} 
+            # width: 700
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (.35, None)
+            # pos_hint: {'top': 1, 'right': 1}
+            # width: 460
+            Label:
+                text: 'Configurações'
+            BoxLayout:
+                orientation: 'horizontal'
+                Button:
+                    text: 'Adicionar participante'
+                    on_release: root._modbusPopup.open()
+                Button:
+                    text: 'Remover participante'
+                    on_release: root._scanPopup.open()
+        Image:
+            id: icone_vale
+            size_hint: (.06, None)
+            # width: 50
+            source: 'imgs/icone_vale.png'
+            # pos_hint: {'top': 1, 'right': 1}
+            
+
+    FloatLayout:
+        canvas.before:
+            #Color:
+            #    rgba: 0.7, 0.7, 0.7, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'imgs/Sis_Supervisorio.png'
+
+        GridLayout:
+            keep_ratio: False
+            allow_stretch: True
+            size_hint: (0.3, 0.15)
+            pos_hint: {'x': 0.45, 'y': 0.03}
+            cols: 2
+            rows: 3
+            TextInput:
+                text: "Nome do Aluno "
+                font_size: 14
+                color: 0,0,0,1
+            TextInput:
+                text: "Nome da Montaria"
+                font_size: 14
+                color: 0,0,0,1
+            TextInput:
+                id: tempo_aluno1
+                text: "Tempo (s)"
+                font_size: 14
+                color: 0,0,0,1
+            Label:
+                id: txt_rotacao
+                text: "20"
+                fonte_size: 14
+                halign: 'center'
+                valign: 'middle'
+                background_color: (1,1,1,1)
+        
+
+        
+        
+        
+
+
+        

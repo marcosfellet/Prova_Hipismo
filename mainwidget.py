@@ -4,19 +4,22 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
-from kivy.properties import ListProperty, ObjectProperty, BooleanProperty
+from kivy.properties import ListProperty, NumericProperty, ObjectProperty, BooleanProperty
 from kivy.clock import Clock
 from kivy.lang import Builder
-from kivy.core.window import Window
-import os
 from typing import Optional, List, Dict, Any
+from kivy.uix.widget import Widget
+import os
+import numpy as np
 
-# Configurar tamanho da janela (opcional)
-Window.size = (800, 600)
-
+from popups import(
+    ParametrosPopup, ObstaculosPopup
+)
 
 class AlunoInput(BoxLayout):
-    """Widget personalizado para representar um aluno"""
+    """
+    Widget personalizado para representar um aluno
+    """
     
     alunos_grid = ObjectProperty(None)
     carregou_imagem = BooleanProperty(False)
@@ -39,7 +42,7 @@ class AlunoInput(BoxLayout):
         """Retorna o tempo como float, ou None se inválido"""
         try:
             texto = self.ids.tempo_input.text.strip()
-            if texto:
+            if texto and self._validar_tempo(float(texto)):
                 return float(texto)
             return None
         except ValueError:
@@ -72,6 +75,63 @@ class AlunoInput(BoxLayout):
         """Valida o nome enquanto o usuário digita"""
         self.validar_nome()
 
+    def calcula_resultados(self):
+         #Método para calcular pontuação
+
+        self._tempo = self._get_tempo()
+        self._tempo_concedido = self.calcula_TC()
+        self._tempo_ideal = self.calcula_TI()
+        self._faltas = int(self.ids.faltas)
+        self._tempo_limite = self.calcula_TL()
+
+        self._diferenca_tempo = np.abs(self._tempo - self._tempo_concedido)
+        self._diferenca_tempo_limite = np.abs(self._tempo - self._tempo_limite)
+        if self._tempo == self._tempo_concedido:
+            self._penalidade_tempo = 1
+        elif self._tempo < self._tempo_limite or self._tempo >= self._tempo_concedido:
+            if self._diferenca_tempo >= 0.01:
+                self._penalidade_tempo = round(self._diferenca_tempo, 0)
+                if round(self._diferenca_tempo, 0) == 0:
+                    self._penalidade_tempo = 1
+            elif self._diferenca_tempo_limite >= 0.01:
+                self._penalidade_tempo = round(self._diferenca_tempo_limite, 0)
+                if round(self._diferenca_tempo_limite, 0) == 0:
+                    self._penalidade_tempo = 1
+        elif self._tempo == self._tempo_concedido:
+            self._penalidade_tempo = 1
+
+        # elif (self._tempo - self._tempo_limite) == -0.01:
+        #     self._penalidade_tempo = 1
+
+        self._pontucao = np.abs(self._tempo - self._tempo_ideal) + self._faltas*4 + self._penalidade_tempo
+
+        return self._pontucao
+    
+
+    def calcula_TI(self, tempo_concedido):
+        
+        #Método para calcular tempo ideal
+        
+        self._tempo_ideal = round(tempo_concedido *0.95, 0) #ja arredondando para 0 casas decimais
+        return self._tempo_ideal
+
+    def calcula_TC(self):
+        
+        #Método para calcular tempo concedido
+       
+        ############################## PEGAR DO TEXTINPUT
+        self._pista = self.ids.pista.text()
+        self._velocidade = self.ids.velocidade.text()
+        self._tempo_concedido = round((self._pista*60)/self._velocidade, 0) #ja arredondando para 0 casas decimais
+        return self._tempo_concedido
+
+    def calcula_TL(self):
+        
+        #Método para calcular tempo limite
+        
+        self._tempo_ideal = self.calcula_TI()
+        self._tempo_limite = self._tempo_ideal - 3
+        return self._tempo_limite
 
 class AlunosGrid(GridLayout):
     """Grid principal que contém todos os alunos"""
@@ -85,6 +145,22 @@ class AlunosGrid(GridLayout):
         self.padding = 10
         self.size_hint_y = None
         self.bind(minimum_height=self.setter('height'))
+        
+    def abrir_popup_parametros(self):
+        """Abre o popup de parâmetros"""
+        self.popup = ParametrosPopup()
+        self.popup.open()
+    
+    def pegar_valores_do_popup(self):
+        """Pega os valores do popup após fechado"""
+        if hasattr(self, 'popup'):
+            pista, velocidade = self.popup.get_valores()
+            if pista is not None and velocidade is not None:
+                print(f"Pista: {pista}m, Velocidade: {velocidade}m/s")
+                # Agora você pode usar os valores no main.py
+                self.calcular_tempo_concedido(pista, velocidade)
+            else:
+                print("Valores inválidos no popup")
     
     def adicionar_aluno(self):
         """Adiciona um novo aluno à grade"""
@@ -100,12 +176,18 @@ class AlunosGrid(GridLayout):
             self.remove_widget(aluno_widget)
             self.atualizar_altura()
     
-    def atualizar_altura(self, *args):
+    def atualizar_altura(self, **kwargs):
         """Atualiza a altura do grid baseado no número de alunos"""
         self.height = len(self.alunos) * 50 + self.padding[0] * 2
+
     
+
+
+
+
+    """
     def calcular_estatisticas(self) -> Optional[Dict[str, Any]]:
-        """Calcula estatísticas dos tempos"""
+        #Calcula estatísticas dos tempos
         tempos = []
         resultados = []
         
@@ -132,18 +214,95 @@ class AlunosGrid(GridLayout):
                 'total_alunos': len(tempos)
             }
         return None
+    """
 
 
+
+"""
 class MainWidget(BoxLayout):
-    """Tela principal do aplicativo"""
-    
-    def __init__(self, **kwargs):
+    #Widget principal da aplicação
+
+    # Propriedades para ajudar na referência
+    alunos_grid = ObjectProperty(None)  # Referência para o grid pai
+    def __init__(self, alunos_grid=None, **kwargs):
+       # Construtor da classe MainWidget
+        
         super().__init__(**kwargs)
-        # Carrega o arquivo KV
-        Builder.load_file('main.kv')
+        self.alunos_grid = alunos_grid
     
-    def adicionar_aluno(self):
-        """Adiciona um novo aluno"""
-        self.ids.grid_alunos.adicionar_aluno()
-    
-    
+    def remover_aluno(self):
+        #Remove este aluno da lista
+       
+        if self.alunos_grid:
+            self.alunos_grid.remover_aluno(self)
+
+    def updateGUI(self):
+        
+        #Método para a atualização da interface gráfica a partir dos dados lidos
+        
+
+    def guardar_dados(self):
+        
+       # Método para guardar dados na tabela
+        
+
+    def calcula_TI(self, tempo_concedido):
+        
+        #Método para calcular tempo ideal
+        
+        self._tempo_concedido = tempo_concedido
+        self._tempo_ideal = round(self._tempo_concedido *0.95, 0) #ja arredondando para 0 casas decimais
+        return self._tempo_ideal
+
+    def calcula_TC(self, pista, velocidade):
+        
+        #Método para calcular tempo concedido
+       
+        ############################## PEGAR DO TEXTINPUT
+        self._pista = pista
+        self._velocidade = velocidade
+        self._tempo_concedido = round((self._pista*60)/self._velocidade, 0) #ja arredondando para 0 casas decimais
+        return self._tempo_concedido
+
+    def calcula_TL(self):
+        
+        #Método para calcular tempo limite
+        
+        self._tempo_ideal = self.calcula_TI()
+        self._tempo_limite = self._tempo_ideal - 3
+        return self._tempo_limite
+
+    def pontuacao(self, tempo):
+        
+        #Método para calcular pontuação
+        
+        self._tempo = tempo
+        self._tempo_concedido = self.calcula_TC()
+        self._tempo_ideal = self.calcula_TI()
+        self._faltas = int(self.ids.faltas)
+        self._tempo_limite = self.calcula_TL()
+
+        self._diferenca_tempo = np.abs(self._tempo - self._tempo_concedido)
+        self._diferenca_tempo_limite = np.abs(self._tempo - self._tempo_limite)
+        if self._tempo == self._tempo_concedido:
+            self._penalidade_tempo = 1
+        elif self._tempo < self._tempo_limite or self._tempo >= self._tempo_concedido:
+            if self._diferenca_tempo >= 0.01:
+                self._penalidade_tempo = round(self._diferenca_tempo, 0)
+                if round(self._diferenca_tempo, 0) == 0:
+                    self._penalidade_tempo = 1
+            elif self._diferenca_tempo_limite >= 0.01:
+                self._penalidade_tempo = round(self._diferenca_tempo_limite, 0)
+                if round(self._diferenca_tempo_limite, 0) == 0:
+                    self._penalidade_tempo = 1
+        elif self._tempo == self._tempo_concedido:
+            self._penalidade_tempo = 1
+
+        # elif (self._tempo - self._tempo_limite) == -0.01:
+        #     self._penalidade_tempo = 1
+
+        self._pontucao = np.abs(self._tempo - self._tempo_ideal) + self._faltas*4 + self._penalidade_tempo
+
+        return self._pontucao
+"""
+
