@@ -1,26 +1,14 @@
-from kivy.app import App
-from mainwidget import MainWidget
-from kivy.lang.builder import Builder
-from kivy.core.window import Window
+from prova import Aluno
 
-class MainApp(App):
-    """
+metragem = input('Digite a metragem da pista, por favor (m): ')
+velocidade = input('Digite a velocidade, por favor (m/min): ')
 
-    Classe com o Aplicativo
-    
-    """
+aluno = Aluno(metragem, velocidade)
 
-    def build(self):
-        """
-        
-        Método que gera o aplicativo com no widget principal
-        
-        """
-        self.widget = MainWidget()
-        return self.widget
+print('\n ************************* PARAMETROS DA PROVA ************************* \n')
 
-if __name__ == '__main__':
-    Builder.load_string(open("mainwidget.kv", encoding="utf-8").read(), rulesonly=True) # codificação da leitura dpara caracteres especiais
-    Builder.load_string(open("popups.kv", encoding="utf-8").read(), rulesonly=True)
-    Window.size = (800, 600)
-    MainApp().run()
+print(f'tempo ideal: {parametros._tempo_ideal} segundos')
+print(f'tempo concedido: {parametros._tempo_concedido} segundos')
+print(f'tempo limite: {parametros._tempo_limite} segundos')
+
+print('\n *********************************************************************** \n')

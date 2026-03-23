@@ -1,0 +1,606 @@
+{
+  "parametros_por_grupo": {
+    "40cm": [
+      360.0,
+      325.0
+    ],
+    "60cm": [
+      360.0,
+      350.0
+    ],
+    "80cm": [
+      360.0,
+      350.0
+    ],
+    "1m": [
+      0.0,
+      1.0
+    ],
+    "chao": [
+      0.0,
+      1.0
+    ],
+    "x": [
+      0.0,
+      1.0
+    ]
+  },
+  "data_exportacao": "2026-03-21T22:29:48.470512",
+  "grupos": {
+    "chao": {
+      "metragem": 0.0,
+      "velocidade": 1.0,
+      "premiado": false,
+      "competidores": {
+        "1": {
+          "nome": "Helena Lisboa Gravina",
+          "montaria": "Chloe",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        }
+      }
+    },
+    "x": {
+      "metragem": 0.0,
+      "velocidade": 1.0,
+      "premiado": false,
+      "competidores": {
+        "1": {
+          "nome": "Dulce Schettino",
+          "montaria": "Chloe",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        },
+        "2": {
+          "nome": "Érica Batista",
+          "montaria": "Alecrim",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        },
+        "3": {
+          "nome": "Cecília Medeiros",
+          "montaria": "Chloe",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        },
+        "4": {
+          "nome": "Lorena Delvaux",
+          "montaria": "Chloe",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        },
+        "5": {
+          "nome": "Venâncio Campos Sousa",
+          "montaria": "Chloe",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        },
+        "6": {
+          "nome": "Letícia Dutra Almeida Costa",
+          "montaria": "Chloe",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        },
+        "7": {
+          "nome": "Lucca Cipriani",
+          "montaria": "Chloe",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        }
+      }
+    },
+    "40cm": {
+      "metragem": 360.0,
+      "velocidade": 325.0,
+      "premiado": false,
+      "competidores": {
+        "1": {
+          "nome": "Madá Costa",
+          "montaria": "Fast Lane",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 66.0,
+          "tempo_ideal": 63.0,
+          "tempo_limite": 60.0
+        },
+        "2": {
+          "nome": "Felipe Cortez Marques",
+          "montaria": "Fit",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 66.0,
+          "tempo_ideal": 63.0,
+          "tempo_limite": 60.0
+        },
+        "3": {
+          "nome": "José Carlos Pontello",
+          "montaria": "SL Valdevino",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 66.0,
+          "tempo_ideal": 63.0,
+          "tempo_limite": 60.0
+        },
+        "4": {
+          "nome": "Letícia Granato",
+          "montaria": "Fast Lane",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 66.0,
+          "tempo_ideal": 63.0,
+          "tempo_limite": 60.0
+        },
+        "5": {
+          "nome": "Carolina Andrade Coutinho",
+          "montaria": "Fit",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 66.0,
+          "tempo_ideal": 63.0,
+          "tempo_limite": 60.0
+        },
+        "6": {
+          "nome": "Laura Silva Rezende",
+          "montaria": "Chloe",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 66.0,
+          "tempo_ideal": 63.0,
+          "tempo_limite": 60.0
+        },
+        "7": {
+          "nome": "Maria Fernanda Rezende",
+          "montaria": "Fast Lane",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 66.0,
+          "tempo_ideal": 63.0,
+          "tempo_limite": 60.0
+        },
+        "8": {
+          "nome": "Giovana Falce",
+          "montaria": "Fit",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 66.0,
+          "tempo_ideal": 63.0,
+          "tempo_limite": 60.0
+        },
+        "9": {
+          "nome": "Paola Chitarra",
+          "montaria": "Fast Lane",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 66.0,
+          "tempo_ideal": 63.0,
+          "tempo_limite": 60.0
+        }
+      }
+    },
+    "60cm": {
+      "metragem": 360.0,
+      "velocidade": 350.0,
+      "premiado": false,
+      "competidores": {
+        "1": {
+          "nome": "Elisa Martins Nogueira",
+          "montaria": "Audi",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "2": {
+          "nome": "Arthur Gabriel Pires",
+          "montaria": "Fit",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "3": {
+          "nome": "Maria Antônia Carvalho",
+          "montaria": "Colombina",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "4": {
+          "nome": "Júlia Curvelo Rodrigues",
+          "montaria": "Audi",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "5": {
+          "nome": "Helena Marletta",
+          "montaria": "Fiote",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "6": {
+          "nome": "Alexia Carnevali",
+          "montaria": "Fast Lane",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "7": {
+          "nome": "Isabela Maciel",
+          "montaria": "Audi",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "8": {
+          "nome": "Larissa de Souza Duarte",
+          "montaria": "Fit",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "9": {
+          "nome": "Daniela Sophie Temponi",
+          "montaria": "Fiote",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "10": {
+          "nome": "Flávia Lovisi",
+          "montaria": "Audi",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        }
+      }
+    },
+    "80cm": {
+      "metragem": 360.0,
+      "velocidade": 350.0,
+      "premiado": true,
+      "competidores": {
+        "1": {
+          "nome": "Isadora Braga",
+          "montaria": "Jhones",
+          "tempo": 63.2,
+          "faltas": 0,
+          "obstaculos": "",
+          "penalidade_tempo": 2.0,
+          "pontuacao": 2.0,
+          "avaliado": true,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "2": {
+          "nome": "Manuela Pereira Colen",
+          "montaria": "Fit",
+          "tempo": 55.55,
+          "faltas": 0,
+          "obstaculos": "",
+          "penalidade_tempo": 1,
+          "pontuacao": 1,
+          "avaliado": true,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "3": {
+          "nome": "Maria Masson",
+          "montaria": "Sadan",
+          "tempo": 53.2,
+          "faltas": 0,
+          "obstaculos": "",
+          "penalidade_tempo": 3.0,
+          "pontuacao": 3.0,
+          "avaliado": true,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "4": {
+          "nome": "Júlia Mautoni Faria",
+          "montaria": "Audi",
+          "tempo": 59.0,
+          "faltas": 3,
+          "obstaculos": "2, 4, 85",
+          "penalidade_tempo": 0,
+          "pontuacao": 12,
+          "avaliado": true,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "5": {
+          "nome": "Isabella Mostaro Neves",
+          "montaria": "Baruk",
+          "tempo": 64.0,
+          "faltas": 1,
+          "obstaculos": "2",
+          "penalidade_tempo": 3.0,
+          "pontuacao": 7.0,
+          "avaliado": true,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "6": {
+          "nome": "Júlia Lorençato Mostaro",
+          "montaria": "Fit",
+          "tempo": 80.0,
+          "faltas": 2,
+          "obstaculos": "2, 4",
+          "penalidade_tempo": 19.0,
+          "pontuacao": 27.0,
+          "avaliado": true,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        },
+        "7": {
+          "nome": "Cecília Rajo",
+          "montaria": "Fiote",
+          "tempo": 60.0,
+          "faltas": 0,
+          "obstaculos": "",
+          "penalidade_tempo": 0,
+          "pontuacao": 0,
+          "avaliado": true,
+          "tempo_concedido": 62.0,
+          "tempo_ideal": 59.0,
+          "tempo_limite": 56.0
+        }
+      }
+    },
+    "1m": {
+      "metragem": 0.0,
+      "velocidade": 1.0,
+      "premiado": false,
+      "competidores": {
+        "1": {
+          "nome": "Valentina Daldegan",
+          "montaria": "QH Concerta",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        },
+        "2": {
+          "nome": "Sofia Makla",
+          "montaria": "Mamute",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        },
+        "3": {
+          "nome": "Paula Falce",
+          "montaria": "Pablo Cavalieri",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        },
+        "4": {
+          "nome": "Thaís Helena Tripoli",
+          "montaria": "Top Corrado",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        },
+        "5": {
+          "nome": "Ana Clara Breda",
+          "montaria": "Osamu",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        },
+        "6": {
+          "nome": "Pedro Pontello",
+          "montaria": "SL Valdevino",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        },
+        "7": {
+          "nome": "Pedro Juan",
+          "montaria": "Querido Men",
+          "tempo": null,
+          "faltas": null,
+          "obstaculos": "",
+          "penalidade_tempo": null,
+          "pontuacao": null,
+          "avaliado": false,
+          "tempo_concedido": 0.0,
+          "tempo_ideal": 0.0,
+          "tempo_limite": -3.0
+        }
+      }
+    }
+  }
+}
